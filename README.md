@@ -50,7 +50,47 @@ Login to your aws account
   ![image](https://user-images.githubusercontent.com/63963025/164751863-91faa0c2-33f8-41a5-8096-caee4096885f.png)
 ## Now lets install apache inside apache-vm as well as php (connect to your vm you can also use putty to ssh your vm)
   ![image](https://user-images.githubusercontent.com/63963025/164752132-ea8b3ca2-52da-4d02-a10a-0b5dc7d78447.png)
-## use this cmd 
+## use this cmd to install apache and php in apache-webserver vm
+  ```
+sudo apt-get update
+  sudo apt-get install apache2 -y
+sudo apt-get install php-curl -y
+sudo apt-get install php-mysql -y
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-get update 
+sudo apt install php7.1-curl -y
+sudo apt-get install php7.2-mbstring -y
+sudo apt-get install php-xml -y 
+sudo apt-get install php-gd -y
+sudo apt-get install libapache2-mod-php -y
+sudo apt-get install mysql-client -y
+
+```
+## after installtion of copy external ip of apache-webserver vm and paste to you browser 
+  ![image](https://user-images.githubusercontent.com/63963025/164874646-03df0b33-d63b-45b2-87e3-706fec52d76b.png)
+
+  ![image](https://user-images.githubusercontent.com/63963025/164874675-05b1c142-a1eb-4298-8645-92b0b6ced526.png)
+## Now add php file inside folder /var/www/html/ 
+  ``` 
+  sudo rm /var/www/html/index.html
+  cd /var/www/html 
+  sudo nano index.html 
+  <?php
+
+  phpinfo();
+
+  ?>
+  :wq!
+  
+  ```
+  ## now here you will see php webpage 
+  ![image](https://user-images.githubusercontent.com/63963025/164875173-2dbbf399-6563-4eab-9cd4-82e0dbfe7c9f.png)
+  
+  ## now we have to ssh another vm using bastion host because it contain internal ip so we can not ssh without bastion host so we will create a bastion host instance here but in GCP we have IAP (Identity-Aware Proxy) which is use intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service, and only lets the requests through if they come from a user you authorize. that is secure as well as you can also ssh internal ip using IAP 
+  here in aws you need to create Bastion Host to ssh your machine so there is no flexibility in aws 
+  
+  ## 
+
   
 
   
