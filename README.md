@@ -86,10 +86,48 @@ sudo apt-get install mysql-client -y
   ## now here you will see php webpage 
   ![image](https://user-images.githubusercontent.com/63963025/164875173-2dbbf399-6563-4eab-9cd4-82e0dbfe7c9f.png)
   
-  ## now we have to ssh another vm using bastion host because it contain internal ip so we can not ssh without bastion host so we will create a bastion host instance here but in GCP we have IAP (Identity-Aware Proxy) which is use intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service, and only lets the requests through if they come from a user you authorize. that is secure as well as you can also ssh internal ip using IAP 
-  here in aws there is similar bconcept called server manager but there is some limitations in aws the ssm agent is only install in aws and windows machine to access internal ip vm but here we are using ubuntu machine so thats why i am using  bastion host to access machine  
+  ## now we have to ssh another vm using bastion host because it contain internal ip so we can not ssh without bastion host so we will create a bastion host instance here but in GCP we have IAP (Identity-Aware Proxy) which is use intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service, and only lets the requests through if they come from a user you authorize. that is secure as well as you can also ssh internal ip using IAP here in aws there is similar bconcept called server manager but there is some limitations in aws the ssm agent is only install in aws and windows machine to access internal ip vm but here we are using ubuntu machine so thats why i am using  bastion host to access machine  
   
-  ## 
+  ## lets create bastion host 
+  
+  ## name:- bastion host 
+  
+  ## OS ubuntu
+
+  ## only in networking part we will change security group select ip of database vm to access  
+  ![image](https://user-images.githubusercontent.com/63963025/164936839-b97cbfef-8f80-44e2-bc9b-0c65f59f5a26.png)
+
+  ## bastion host is created sucessfully 
+  ![image](https://user-images.githubusercontent.com/63963025/164937032-fdced89b-07d2-4673-b2c3-f431ffb3bd21.png)
+
+ ## now connect to bastion host 
+  ![image](https://user-images.githubusercontent.com/63963025/164937370-0f18a9d1-3f0c-4fab-b35f-a58c76b7ea5c.png)
+  
+  ## create a pem file inside the machine but make sure the name should be same go to your local system download and copy the key content and add into your bastion host to access mysql db instance 
+  ![image](https://user-images.githubusercontent.com/63963025/164938776-d3e317e0-6941-4b6f-8772-7f77ab463843.png)
+
+  ## copy the key content inside the file 
+  ![image](https://user-images.githubusercontent.com/63963025/164939093-e1821052-e0b0-4698-a6bb-0dbf004423b4.png)
+
+  ## create a pem file with same name 
+  ![image](https://user-images.githubusercontent.com/63963025/164939483-c6032979-5501-4a8a-a126-01b3a56b201b.png)
+
+  ## copy key inside that file 
+  ![image](https://user-images.githubusercontent.com/63963025/164940726-3f7241f7-7812-4da7-8e4c-bf487284d570.png)
+## now use this cmnd 
+  ```
+  chmod 0400 Lampkey.pem 
+  ls -l
+  ```
+  ![image](https://user-images.githubusercontent.com/63963025/164941717-6ad1de02-d632-4f58-abcc-ee21b3a60c0c.png)
+
+##   
+  
+  ## here we are 
+  
+  ![image](https://user-images.githubusercontent.com/63963025/164942389-1b98a6f6-29ba-4426-849f-1daff2d84e88.png)
+
+
 
   
 
