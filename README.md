@@ -86,7 +86,7 @@ sudo apt-get install mysql-client -y
   ## now here you will see php webpage 
   ![image](https://user-images.githubusercontent.com/63963025/164875173-2dbbf399-6563-4eab-9cd4-82e0dbfe7c9f.png)
   
-  ## now we have to ssh another vm using bastion host because it contain internal ip so we can not ssh without bastion host so we will create a bastion host instance here but in GCP we have IAP (Identity-Aware Proxy) which is use intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service, and only lets the requests through if they come from a user you authorize. that is secure as well as you can also ssh internal ip using IAP here in aws there is similar bconcept called server manager but there is some limitations in aws the ssm agent is only install in aws and windows machine to access internal ip vm but here we are using ubuntu machine so thats why i am using  bastion host to access machine  
+  ## now we have to ssh another vm using bastion host because it contain internal ip so we can not ssh without bastion host so we will create a bastion host instance here but in GCP we have IAP (Identity-Aware Proxy) which is use intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service, and only lets the requests through if they come from a user you authorize. that is secure as well as you can also ssh internal ip using IAP here in aws there is similar bconcept called system manager but there is some limitations in aws the ssm agent is only install in aws and windows machine to access internal ip vm but here we are using ubuntu machine so thats why i am using  bastion host to access machine  
   
   ## lets create bastion host 
   
