@@ -17,6 +17,54 @@ Login to your aws account
 ## select region Mumbai- <b>ap-south1<b>
 ![image](https://user-images.githubusercontent.com/63963025/164739356-be65e072-155f-4fb3-8807-91f76d683d45.png)
 
+## Create VPC 
+  ![image](https://user-images.githubusercontent.com/63963025/164967294-346a22ab-9ad7-48d9-a7ce-9579466b4fee.png)
+## add CIDR range 
+ ![image](https://user-images.githubusercontent.com/63963025/164968136-232b2b95-fdc3-4071-bbc2-53bb25546ada.png)
+  
+## Now Create Internet Gateway for interact with outside world internet VPC ----> Internet Gateways 
+  ![image](https://user-images.githubusercontent.com/63963025/164967475-bf6825da-2147-4945-85bf-dd17922ee756.png)
+
+  ![image](https://user-images.githubusercontent.com/63963025/164967527-fdac80fc-37b0-4f8c-b597-5f5637c28946.png)
+## After creation of Igw we have to attach to VPC that we have created now go to action and attach to your VPC 
+  ![image](https://user-images.githubusercontent.com/63963025/164967618-6da3ecfd-922f-403d-bd22-d2c098e039ab.png)
+![image](https://user-images.githubusercontent.com/63963025/164967648-da776ba9-f5e2-4218-8a5e-41524b12ecd4.png)
+## Now lets create 2 subnet (public,private)
+
+  ## In Filter select your VPC 
+  ![image](https://user-images.githubusercontent.com/63963025/164967753-7e70ad84-47a3-4022-bc71-648bb6ae01a5.png)
+## VPC ----> subnet create subnet 
+  ## select your vpc 
+  ![image](https://user-images.githubusercontent.com/63963025/164968246-ab2415e8-a358-4800-9ef5-5f382aaad714.png)
+
+## add subnet (public subnet)
+  ![image](https://user-images.githubusercontent.com/63963025/164968366-0da4dffd-fae5-46fa-adf7-516c1dd524dc.png)
+
+## add subnet (private subnet)
+ ![image](https://user-images.githubusercontent.com/63963025/164968436-c7dec02a-d647-41ff-8f7a-d9fb6c77824e.png)
+
+## create subnet
+![image](https://user-images.githubusercontent.com/63963025/164968455-8b448293-170e-46e3-bf20-6c761288bb5b.png)
+
+ ## now configure route table VPC---> Route Tables we will create 2 route tables here 
+ ## public route table
+  ![image](https://user-images.githubusercontent.com/63963025/164968533-8cd527f9-d1db-49a8-85ca-554bbc1ee5c4.png)
+## private route table 
+ ![image](https://user-images.githubusercontent.com/63963025/164968685-2ffe2899-d498-44e2-ac5c-18417cfe45c6.png)
+![image](https://user-images.githubusercontent.com/63963025/164968711-e5b2f757-6707-40ef-9bd8-3bc8ec55d73d.png)
+## now select public routetable  go to subnet associations add public subnet 
+  ![image](https://user-images.githubusercontent.com/63963025/164968835-9effa5f8-82e2-410c-9bfa-8500cb25c5a7.png)
+
+  ![image](https://user-images.githubusercontent.com/63963025/164968760-3aba2bc1-a7b1-49f6-a4d0-505747b83041.png)
+## same in private add private subnet  
+![image](https://user-images.githubusercontent.com/63963025/164968843-ea643827-76ee-4333-b2f4-f1f12055073e.png)
+## in public route table go to routes 
+  ![image](https://user-images.githubusercontent.com/63963025/164968915-73230ea9-8b96-4fd0-9922-cfbe3c6a9b61.png)
+## edit  routes add 0.0.0.0/0 to internet gateway  
+  ![image](https://user-images.githubusercontent.com/63963025/164968950-d82fce79-9c7c-4c59-be83-d5b4751e7d73.png)
+  
+## now we will create 2 ec2 instance one will be public and one will be private  
+
 ## Create Ec2 Instance
   ![image](https://user-images.githubusercontent.com/63963025/164740612-21ceebdf-7135-4d8e-8043-0d223f6469a5.png)
 ## Step1:- go to launch instance 
@@ -30,8 +78,7 @@ Login to your aws account
 ##  now save the key in RSA format and select pem create the key
   ![image](https://user-images.githubusercontent.com/63963025/164742145-8d2ba34b-9ea1-4af6-b560-0665df3b0878.png)
 ## go to network setting edit option create a security group custom name the security group apache webserver
- ![image](https://user-images.githubusercontent.com/63963025/164745812-e1eed815-905c-4a17-a19a-041700415b91.png)
-  ![image](https://user-images.githubusercontent.com/63963025/164745292-a428ee6e-419a-4509-9801-4540a7372617.png)
+ pjiohui
 
 ## select storage default 
   ![image](https://user-images.githubusercontent.com/63963025/164744278-8b23333b-8083-4ee0-a96e-582d6e4740fd.png)
