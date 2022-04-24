@@ -184,11 +184,36 @@ sudo apt-get install mysql-client -y
   ![image](https://user-images.githubusercontent.com/63963025/164956880-468f0a2f-af77-4732-a4c9-ff2d5224de50.png)
 ## now there is 1 issue our mysql instance will not able to download package because not have internet connectivity so here we have to create NAT gateway 
   go to VPC---> NAT Gateway ---> create NAT gateway 
-  ![image](https://user-images.githubusercontent.com/63963025/164957097-a8b2f702-19b8-49eb-aade-1dc7b604fcfe.png)
+![image](https://user-images.githubusercontent.com/63963025/164976625-295151ce-dfad-4586-951f-d61db930d6c4.png)
 
- ![image](https://user-images.githubusercontent.com/63963025/164957124-bc48ab05-e5d5-488f-894e-fb1954e1ff7e.png)
+![image](https://user-images.githubusercontent.com/63963025/164976689-6a32f3b4-39ce-42bb-90e4-c11ffa0bb081.png)
 
- ## 
+
+ ## go to route table and change routes select private route make this point clear we are creating NAT in public subnet and editing routes in private route table 
+  go to routes---> edit routes ----> add routes----> select 0.0.0.0/0 and nat gateway (save changes)
+  ![image](https://user-images.githubusercontent.com/63963025/164976819-90837321-8a78-4538-a081-aad2b9a929ef.png)
+
+  ## thats great you can access to internet now (ssh to mysql machine using bastion host) 
+  ![image](https://user-images.githubusercontent.com/63963025/164976915-e6ce4c2b-b906-4e62-a857-7c44c9a24283.png)
+
+  
+ ## now install this packaage 
+  ```
+  sudo su 
+  apt-get update
+  apt-get upgrade -y
+  apt-get install mysql-server mysql-client -y
+  mysql_secure_installation
+  
+  ```
+  ## after installation use this point according to that set permission 
+ - Enable Validate Password Plugin? No
+- Change the password for root? No
+- Remove anonymous users? Yes
+- Disallow root login remotely? Yes
+- Remove test database and access to it? Yes
+- Reload privilege table now? Yes
+  
 
   
 
