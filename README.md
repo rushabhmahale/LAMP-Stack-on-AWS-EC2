@@ -120,14 +120,22 @@ sudo apt-get install mysql-client -y
   ls -l
   ```
   ![image](https://user-images.githubusercontent.com/63963025/164941717-6ad1de02-d632-4f58-abcc-ee21b3a60c0c.png)
-
-##   sdsafdsfsdf
   
   ## here we are 
   
   ![image](https://user-images.githubusercontent.com/63963025/164942389-1b98a6f6-29ba-4426-849f-1daff2d84e88.png)
+## if you are net able to connect vm or ssh to machine make sure your firewall rule(security group)
+## mysql
+  ![image](https://user-images.githubusercontent.com/63963025/164956832-6ff6b16d-f314-4bb8-a674-2d514f34f2d4.png)
+##apache-web
+  ![image](https://user-images.githubusercontent.com/63963025/164956880-468f0a2f-af77-4732-a4c9-ff2d5224de50.png)
+## now there is 1 issue our mysql instance will not able to download package because not have internet connectivity so here we have to create NAT gateway 
+  go to VPC---> NAT Gateway ---> create NAT gateway 
+  ![image](https://user-images.githubusercontent.com/63963025/164957097-a8b2f702-19b8-49eb-aade-1dc7b604fcfe.png)
 
+ ![image](https://user-images.githubusercontent.com/63963025/164957124-bc48ab05-e5d5-488f-894e-fb1954e1ff7e.png)
 
+ ## 
 
   
 
