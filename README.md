@@ -77,8 +77,10 @@ Login to your aws account
   ![image](https://user-images.githubusercontent.com/63963025/164742003-797a6219-7f72-4a5b-89f0-3e06736a5e5f.png)
 ##  now save the key in RSA format and select pem create the key
   ![image](https://user-images.githubusercontent.com/63963025/164742145-8d2ba34b-9ea1-4af6-b560-0665df3b0878.png)
-## go to network setting edit option create a security group custom name the security group apache webserver
- pjiohui
+## go to network setting edit option create a security group custom name the security group apache webserver (select public subnet here) as well as enable Auto-assign public IP
+![image](https://user-images.githubusercontent.com/63963025/164969334-9000b852-e6e6-4659-9a09-2035f6d15323.png)
+
+![image](https://user-images.githubusercontent.com/63963025/164969261-5f652539-459f-405d-891e-6c4f36f83489.png)
 
 ## select storage default 
   ![image](https://user-images.githubusercontent.com/63963025/164744278-8b23333b-8083-4ee0-a96e-582d6e4740fd.png)
@@ -88,9 +90,11 @@ Login to your aws account
 ## create same instance but this time we need to change network setting 
 ## instance name :- Mysql database
 ## Network setting disable public ip because of database your  database must be private  
-  ![image](https://user-images.githubusercontent.com/63963025/164750960-5207d4c4-3283-4de8-b453-2c494f0d04e5.png)
+ ![image](https://user-images.githubusercontent.com/63963025/164969472-c489eb00-caa6-4109-ab70-b190804331d9.png)
+
 ## create a new security group 
-  ![image](https://user-images.githubusercontent.com/63963025/164751367-fd7f375e-b36f-4b56-a5bd-2c376e1637b0.png)
+  ![image](https://user-images.githubusercontent.com/63963025/164969486-ea860f8f-9c95-49e2-81e7-40532ea74ac6.png)
+
 ## also we have to add mysql port number to connect our db to apache webserver 
   ![image](https://user-images.githubusercontent.com/63963025/164751491-180aba65-edda-4ec1-ae6a-56a97916cf16.png)
  
@@ -142,7 +146,9 @@ sudo apt-get install mysql-client -y
   ## OS ubuntu
 
   ## only in networking part we will change security group select ip of database vm to access  
-  ![image](https://user-images.githubusercontent.com/63963025/164936839-b97cbfef-8f80-44e2-bc9b-0c65f59f5a26.png)
+ ![image](https://user-images.githubusercontent.com/63963025/164969620-fb3a5de9-bbf1-47af-908f-d8c83758d3d5.png)
+![image](https://user-images.githubusercontent.com/63963025/164969638-9cb449c2-478b-4627-95a2-4cd2b53cb412.png)
+
 
   ## bastion host is created sucessfully 
   ![image](https://user-images.githubusercontent.com/63963025/164937032-fdced89b-07d2-4673-b2c3-f431ffb3bd21.png)
@@ -171,7 +177,7 @@ sudo apt-get install mysql-client -y
   ## here we are 
   
   ![image](https://user-images.githubusercontent.com/63963025/164942389-1b98a6f6-29ba-4426-849f-1daff2d84e88.png)
-## if you are net able to connect vm or ssh to machine make sure your firewall rule(security group)
+## if you are net able to connect vm or ssh to machine make sure your firewall rule(security group) if not use sudo to ssh also go through steps 
 ## mysql
   ![image](https://user-images.githubusercontent.com/63963025/164956832-6ff6b16d-f314-4bb8-a674-2d514f34f2d4.png)
 ##apache-web
