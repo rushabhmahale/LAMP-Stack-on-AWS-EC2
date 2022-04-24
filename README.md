@@ -10,6 +10,10 @@ LAMP consists of four components necessary to establish a fully functional web d
 - MySQL is a relational database management system used for creating and managing web databases, but also for data warehousing, application logging, e-commerce, etc.
 - PHP, Perl, and Python are programming languages are used to create web applications.
 
+## Reffer this blogs:- 
+ - https://www.interserver.net/tips/kb/configure-wordpress-external-database/
+ - https://www.tecmint.com/install-wordpress-in-ubuntu-lamp-stack/
+
 ## steps to be followed :-
 Login to your aws account 
 ![image](https://user-images.githubusercontent.com/63963025/164738889-f810f515-a1a4-400b-bf55-05f4938fe353.png)
@@ -125,7 +129,7 @@ sudo apt-get install mysql-client -y
   ``` 
   sudo rm /var/www/html/index.html
   cd /var/www/html 
-  sudo nano index.html 
+  sudo nano index.php 
   <?php
 
   phpinfo();
@@ -214,13 +218,67 @@ sudo apt-get install mysql-client -y
 - Remove test database and access to it? Yes
 - Reload privilege table now? Yes
   
+  ## now access mysql using cmd 
+  ```
+  sudo mysql -uroot -p
+  ```
+  
+  ![image](https://user-images.githubusercontent.com/63963025/164978651-e6261857-d83b-435d-9c91-e4f8b069d5e5.png)
+
+  ## now go to this file and add internal ip of mysql internal ip 
+  ```
+  sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+  ```
+ ![image](https://user-images.githubusercontent.com/63963025/164979701-6677d194-6a37-4fa7-b949-37155c5c66f4.png)
+
+
+  ## In the file, find a line containing bind-address add your mysql internal ip 
+  ![image](https://user-images.githubusercontent.com/63963025/164979742-37e5e44c-4ff8-4a6c-894c-815bbe0b5b55.png)
+```
+  systemctl restart mysql 
+  ```
+  
+  ## now go to MySQL database 
+  ```
+  mysql -uroot -p;
+ ```
+  
+  ## now inside Mysql database use this databse cmd 
+ - mysql> CREATE DATABASE wordpress;
+- mysql> CREATE USER ‘wordpressUser‘@’1.2.3.4‘ IDENTIFIED BY ‘qawsedrf123‘;
+- mysql> GRANT ALL PRIVILEGES ON wordpress.* TO ‘wordpressUser‘@’1.2.3.4‘;
+- mysql> FLUSH PRIVILEGES;
+
+  ![image](https://user-images.githubusercontent.com/63963025/164982294-de0b0a05-fdc9-4fa1-992e-b32d89232710.png)
+## lets check connectivity we are able to connect database or not so go to apache web machine 
+  '''
+  telnet <internal ip of mysql machine> 3306
+  '''
+  ## so there is connectivity between apache vm and mysql machine 
+  ![image](https://user-images.githubusercontent.com/63963025/164982565-11b1007e-b016-4d60-82e1-a97ac9964baf.png)
+## lets install wordpress inside apache machine now 
+  ```
+   cd /var/www/html
+ rm -rf *
+ wget https://wordpress.org/latest.tar.gz
+ tar -xzvf latest.tar.gz
+ mv wordpress/* ./
+ rm latest.tar.gz
+ chown -R www-data:www-data /var/www/html
+  systemctl restart apache2
+  ```
+
+## wordpress succesfully installed and running 
+  ![image](https://user-images.githubusercontent.com/63963025/164984265-264251b7-0467-42a8-a0eb-46dd825be4eb.png)
+
+ ![image](https://user-images.githubusercontent.com/63963025/164984276-c4f546d0-11e7-47b5-a2cf-6ef7109362e8.png)
+
+ ![image](https://user-images.githubusercontent.com/63963025/164984294-065bdb60-e37c-4863-b71e-a8e0aa27e7e9.png)
+
+  ![image](https://user-images.githubusercontent.com/63963025/164984323-ba61ca81-6de8-4b3c-a421-174a24afd5c5.png)
+
 
   
-
-  
-  
-
-
 
 
   
