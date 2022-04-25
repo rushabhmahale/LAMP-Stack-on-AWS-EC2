@@ -10,6 +10,10 @@ LAMP consists of four components necessary to establish a fully functional web d
 - MySQL is a relational database management system used for creating and managing web databases, but also for data warehousing, application logging, e-commerce, etc.
 - PHP, Perl, and Python are programming languages are used to create web applications.
 
+## Architecture Diagram of LAMP Stack:- 
+
+![LAMP architect daigram](https://user-images.githubusercontent.com/63963025/165019698-5ba77abd-9672-475e-b02d-24e6cad33a1c.png)
+
 ## Reffer this blogs:- 
  - https://www.interserver.net/tips/kb/configure-wordpress-external-database/
  - https://www.tecmint.com/install-wordpress-in-ubuntu-lamp-stack/
