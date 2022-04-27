@@ -11,8 +11,9 @@ LAMP consists of four components necessary to establish a fully functional web d
 - PHP, Perl, and Python are programming languages are used to create web applications.
 
 ## Architecture Diagram of LAMP Stack:- 
+![new LAMP architect daigram](https://user-images.githubusercontent.com/63963025/165558448-429ad2eb-8866-4675-8d68-d8ea7dba9825.png)
 
-![LAMP architect daigram](https://user-images.githubusercontent.com/63963025/165019698-5ba77abd-9672-475e-b02d-24e6cad33a1c.png)
+
 
 ## Reffer this blogs:- 
  - https://www.interserver.net/tips/kb/configure-wordpress-external-database/
