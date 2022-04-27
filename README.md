@@ -250,8 +250,8 @@ sudo apt-get install mysql-client -y
   
   ## now inside Mysql database use this databse cmd 
  - mysql> CREATE DATABASE wordpress;
-- mysql> CREATE USER ‘wordpressUser‘@’1.2.3.4‘ IDENTIFIED BY ‘qawsedrf123‘;
-- mysql> GRANT ALL PRIVILEGES ON wordpress.* TO ‘wordpressUser‘@’1.2.3.4‘;
+- mysql> CREATE USER 'wordpressUser'@'1.2.3.4' IDENTIFIED BY 'qawsedrf123';
+- mysql> GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressUser'@'1.2.3.4';
 - mysql> FLUSH PRIVILEGES;
 
   ![image](https://user-images.githubusercontent.com/63963025/164982294-de0b0a05-fdc9-4fa1-992e-b32d89232710.png)
